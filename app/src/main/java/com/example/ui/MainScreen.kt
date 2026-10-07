@@ -94,6 +94,16 @@ fun MainScreen(
         val timerIsPaused by timerViewModel.isPaused.collectAsStateWithLifecycle()
         val timerSubject by timerViewModel.currentSubject.collectAsStateWithLifecycle()
 
+        // Request Notification Permission on Android 13+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            val permissionLauncher = androidx.activity.compose.rememberLauncherForActivityResult(
+                contract = androidx.activity.result.contract.ActivityResultContracts.RequestPermission()
+            ) { _ -> }
+            LaunchedEffect(Unit) {
+                permissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
+
         // Listen for snackbar notifications
         LaunchedEffect(studyFlowViewModel.userMessage) {
             studyFlowViewModel.userMessage.collect { msg ->

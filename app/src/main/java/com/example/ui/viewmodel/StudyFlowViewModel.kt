@@ -293,6 +293,16 @@ class StudyFlowViewModel(application: Application) : AndroidViewModel(applicatio
                 createdAt = System.currentTimeMillis()
             )
             repository.insertTask(task)
+            val app = getApplication<Application>()
+            val dateFormat = SimpleDateFormat("MMM d", Locale.getDefault())
+            com.example.util.NotificationHelper.showTaskCreatedNotification(
+                context = app,
+                taskTitle = cleanTitle,
+                subject = task.subject,
+                dueDateFormatted = dateFormat.format(dueDateMillis),
+                dueTime = dueTime,
+                priority = priority
+            )
             _userMessage.emit("Task created successfully")
         }
     }
@@ -382,6 +392,12 @@ class StudyFlowViewModel(application: Application) : AndroidViewModel(applicatio
 
             if (tasksToCreate.isNotEmpty()) {
                 repository.insertTasks(tasksToCreate)
+                val app = getApplication<Application>()
+                com.example.util.NotificationHelper.showBulkTasksCreatedNotification(
+                    context = app,
+                    taskCount = tasksToCreate.size,
+                    planTitle = plan.title
+                )
                 _userMessage.emit("Saved ${tasksToCreate.size} study tasks to your schedule! 📚")
             } else {
                 _userMessage.emit("No study tasks to save.")

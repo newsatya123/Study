@@ -1,0 +1,6 @@
+{
+  "name": "StudyFlow AI",
+  "description": "Smart study companion with AI schedule generation, task organization, streak tracking, and Pomodoro focus timer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

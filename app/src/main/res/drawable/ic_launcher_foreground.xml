@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Glowing study aura / rings -->
+    <path
+        android:pathData="M54,28 A26,26 0 0,1 80,54 A26,26 0 0,1 54,80 A26,26 0 0,1 28,54 A26,26 0 0,1 54,28"
+        android:strokeWidth="2.5"
+        android:strokeColor="#3300F2FE"
+        android:strokeLineCap="round" />
+
+    <!-- Open Book Left Page -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M52,44 C42,40 33,42 27,45 C26,45.5 25.5,46.5 25.5,47.5 L25.5,70 C25.5,71.2 26.6,72.1 27.8,71.8 C33.5,69.5 42,67.5 52,71 Z" />
+
+    <!-- Open Book Right Page -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56,44 C66,40 75,42 81,45 C82,45.5 82.5,46.5 82.5,47.5 L82.5,70 C82.5,71.2 81.4,72.1 80.2,71.8 C74.5,69.5 66,67.5 56,71 Z" />
+
+    <!-- Book Spine Glow Line -->
+    <path
+        android:pathData="M54,44 L54,72"
+        android:strokeWidth="2.5"
+        android:strokeColor="#7C4DFF"
+        android:strokeLineCap="round" />
+
+    <!-- AI Sparkle / Star at top center -->
+    <path
+        android:fillColor="#00F2FE"
+        android:pathData="M54,29 C54,34 51,37 46,37 C51,37 54,40 54,45 C54,40 57,37 62,37 C57,37 54,34 54,29 Z" />
+
+    <!-- Small side sparkle -->
+    <path
+        android:fillColor="#80D8FF"
+        android:pathData="M70,33 C70,35.5 68.5,37 66,37 C68.5,37 70,38.5 70,41 C70,38.5 71.5,37 74,37 C71.5,37 70,35.5 70,33 Z" />
+</vector>
